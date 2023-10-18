@@ -7,13 +7,13 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>PartyKit: Everything's better with friends!</title>
+    <title>Bubur Diaduk atau Tidak Diaduk?</title>
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <!-- Primary Meta Tags -->
-    <meta name="title" content="PartyKit" />
-    <meta name="description" content="Everything's better with friends!" />
-    <meta name="author" content="PartyKit" />
+    <meta name="title" content="Bubur Diaduk vs Tidak Diaduk" />
+    <meta name="description" content="Some things are worse with strangers!" />
+    <meta name="author" content="@pveyes" />
     <!-- Theme Colour -->
     <meta name="theme-color" content="#ffffff" />
 
@@ -23,6 +23,11 @@
     <style>
       .toggle {
         user-select: none;
+        position: relative;
+        z-index: 1;
+        padding: 5px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 6px;
       }
       .logo {
         position: absolute;
@@ -37,23 +42,31 @@
       .logo a {
         color: #bbb;
       }
+
+      .background {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
     </style>
   </head>
   <body>
+    <div class="background" id="background" style="background-image: url('/bubur-topping.webp');"></div>
     <div class="toggle" id="toggle">
-      <label for="over" class="toggle-label">It's so over</label>
-      <input id="over" name="over-back" class="toggle-radio" type="radio" />
+      <label for="aduk" class="toggle-label">Bubur diaduk</label>
+      <input id="aduk" name="aduk-back" class="toggle-radio" type="radio" />
       <div class="toggle-switch"></div>
-      <label for="back" class="toggle-label">We're so back</span>
-      <input id="back" name="over-back" class="toggle-radio" type="radio" checked />
+      <label for="pisah" class="toggle-label">Bubur tidak diaduk</span>
+      <input id="pisah" name="aduk-back" class="toggle-radio" type="radio" checked />
     </div>
     <div class="logo">
       <div>
-        Concept by
-        <a href="https://twitter.com/alvarlagerlof">@alvarlagerlof</a> 🙌
-      </div>
-      <div>
-        Source code
+        Original project from
         <a href="https://github.com/jevakallio/is-it-over"
           >jevakallio/is-it-over</a
         >

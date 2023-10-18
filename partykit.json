@@ -1,7 +1,7 @@
 {
-  "name": "is-it-over",
+  "name": "aduk-bubur",
   "main": "src/server.ts",
-  "compatibilityDate": "2023-10-13",
+  "compatibilityDate": "2023-10-18",
   "serve": {
     "path": "public",
     "build": "src/client.ts"

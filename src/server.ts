@@ -4,18 +4,18 @@ export default class Server implements Party.Server {
   constructor(readonly party: Party.Party) {}
 
   // optimistic start :)
-  over = false;
+  aduk = false;
 
   onConnect(conn: Party.Connection, ctx: Party.ConnectionContext) {
-    conn.send(JSON.stringify({ over: this.over }));
+    conn.send(JSON.stringify({ aduk: this.aduk }));
   }
 
   onMessage(message: string, sender: Party.Connection) {
     try {
-      const { over } = JSON.parse(message);
-      if (typeof over === "boolean") {
-        this.over = over;
-        this.party.broadcast(JSON.stringify({ over, sender: sender.id }));
+      const { aduk } = JSON.parse(message);
+      if (typeof aduk === "boolean") {
+        this.aduk = aduk;
+        this.party.broadcast(JSON.stringify({ aduk, sender: sender.id }));
       }
     } catch (e) {
       console.log(e);
